@@ -7,6 +7,16 @@ Interactive Pages authored by AI agents, viewed on the web, with an iMessage com
 
 The web renderer and Python server work independently of an agent framework. Hermes has an extracted delivery adapter with mocked transport tests. The iOS host, Messages and Quick Look extensions have Simulator build support; native live delivery is unverified. OpenClaw is planned only.
 
+## While a Page takes shape
+
+![One real Page in three states: working status, Aster’s cursor beside new content, and the completed result](docs/images/working-states.png)
+
+1. **Work begins.** A live status names the agent and shows what is underway while the Page stays readable.
+2. **New details arrive.** A saved revision reveals new text; change highlights and the agent’s cursor show where it landed.
+3. **Ready to enjoy.** The status becomes Done, the cursor disappears, and the finished content remains.
+
+*Actual mobile web captures of a synthetic fixture, using the existing work renderer; decorative phone frames, not native Messages UI. [Reproduce the gallery and use the supported status API](examples/working/README.md). Desktop, reduced-motion and completion behavior are covered by `npm run test:working`.*
+
 ## Quickstart
 
 Use Node 22+, Python 3.9+, and Chrome for the browser test (`CHROME_PATH` can select its executable). Run from the repository root:
