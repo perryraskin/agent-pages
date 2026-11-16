@@ -1,0 +1,2 @@
+import {Page, Section, Steps, Callout} from 'grok/canvas';
+export default function Plan(){return <Page title="A workshop, ready." summary="A simple plan for a creative afternoon."><Callout tone="success" lead="The goal">Make something small. Leave with something finished.</Callout><Section heading="The afternoon"><Steps steps={[{title:'Settle in',detail:'Tea, introductions and a quick sketch.'},{title:'Make together',detail:'A guided hour to build your first piece.'},{title:'Share the work',detail:'Swap ideas and choose a next step.'}]}/></Section></Page>}
