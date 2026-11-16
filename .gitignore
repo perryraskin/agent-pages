@@ -1,0 +1,13 @@
+node_modules/
+apps/web/build/
+apps/web/src/
+.state/
+__pycache__/
+*.pyc
+DerivedData/
+apps/ios/HermesPages.xcodeproj/
+.env
+Signing.xcconfig
+
+*.dylib
+server/native/RenderPagePreview

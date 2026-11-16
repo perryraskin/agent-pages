@@ -1,0 +1,95 @@
+name: HermesPages
+options:
+  deploymentTarget:
+    iOS: '18.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    DEVELOPMENT_TEAM: 
+    CODE_SIGN_STYLE: Automatic
+    CURRENT_PROJECT_VERSION: 3
+    MARKETING_VERSION: 0.1.0
+    TARGETED_DEVICE_FAMILY: '1,2'
+schemes:
+  HermesPages:
+    build:
+      targets:
+        HermesPages: all
+    test:
+      targets: [HermesPagesTests]
+    archive:
+      config: Release
+  HermesPagesMessages:
+    build:
+      targets:
+        HermesPages: all
+        HermesPagesMessages: all
+    run:
+      config: Debug
+      executable: /Applications/MobileSMS.app
+      askForAppToLaunch: true
+targets:
+  HermesPages:
+    type: application
+    platform: iOS
+    sources: [Sources, Shared, Resources]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.example.agentpages
+        INFOPLIST_FILE: Sources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    entitlements:
+      path: Sources/HermesPages.entitlements
+      properties:
+        com.apple.security.application-groups: [group.org.example.agentpages]
+    dependencies:
+      - target: HermesPagesMessages
+        embed: true
+      - target: HermesPagesPreview
+        embed: true
+  HermesPagesMessages:
+    type: app-extension.messages
+    platform: iOS
+    sources: [Messages, Shared, Resources/InstrumentSerif-Regular.ttf, Resources/InstrumentSerif-OFL.txt]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.example.agentpages.messages
+        INFOPLIST_FILE: Messages/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: iMessage App Icon
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
+    entitlements:
+      path: Messages/Messages.entitlements
+      properties:
+        com.apple.security.application-groups: [group.org.example.agentpages]
+    dependencies:
+      - sdk: Messages.framework
+  HermesPagesPreview:
+    type: app-extension
+    platform: iOS
+    sources:
+      - Preview
+      - Shared/Models.swift
+      - Shared/PageReference.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.example.agentpages.preview
+        INFOPLIST_FILE: Preview/Info.plist
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
+    entitlements:
+      path: Preview/Preview.entitlements
+      properties:
+        com.apple.security.application-groups: [group.org.example.agentpages]
+    dependencies:
+      - sdk: QuickLook.framework
+  HermesPagesTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.example.agentpages.tests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: HermesPages

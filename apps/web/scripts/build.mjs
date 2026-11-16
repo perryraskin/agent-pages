@@ -1,0 +1,10 @@
+import {build} from 'esbuild';
+import fs from 'node:fs';import path from 'node:path';import {createRequire} from 'node:module';
+const root=process.cwd(), out=path.join(root,'apps/web/build');fs.mkdirSync(out,{recursive:true});
+const common={bundle:true,write:false,jsx:'automatic',alias:{'grok/canvas':path.join(root,'packages/renderer/canvas.tsx')},define:{'process.env.NODE_ENV':'"production"'}};
+const entry=path.join(root,'examples/form/page.tsx');
+const server=await build({...common,platform:'node',format:'cjs',stdin:{resolveDir:root,loader:'tsx',contents:`import React from 'react';import {renderToString} from 'react-dom/server';import Page from ${JSON.stringify(entry)};export const html=renderToString(<Page/>);`}});
+const tmp=path.join(out,'render.cjs');fs.writeFileSync(tmp,server.outputFiles[0].text);const html=createRequire(import.meta.url)(tmp).html;fs.unlinkSync(tmp);
+const client=await build({...common,platform:'browser',format:'iife',minify:true,stdin:{resolveDir:root,loader:'tsx',contents:`import React from 'react';import {hydrateRoot} from 'react-dom/client';import Page from ${JSON.stringify(entry)};hydrateRoot(document.getElementById('root'),<Page/>);`}});
+fs.writeFileSync(path.join(out,'form.html'),`<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Sample form</title><style>${fs.readFileSync('packages/renderer/canvas.css','utf8')}</style></head><body><div id="root">${html}</div><script>${client.outputFiles[0].text.replace(/<\/script/gi,'<\\/script')}</script></body></html>`);
+fs.mkdirSync('apps/web/src/form',{recursive:true});fs.copyFileSync('examples/form/meta.json','apps/web/src/form/meta.json');console.log('Built synthetic form');

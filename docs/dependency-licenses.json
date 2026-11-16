@@ -1,0 +1,122 @@
+{
+  "@esbuild/darwin-arm64": {
+    "version": "0.27.7",
+    "license": "MIT"
+  },
+  "@json-render/core": {
+    "version": "0.23.1",
+    "license": "Apache-2.0"
+  },
+  "@json-render/react": {
+    "version": "0.23.1",
+    "license": "Apache-2.0"
+  },
+  "@puppeteer/browsers": {
+    "version": "3.2.5",
+    "license": "Apache-2.0"
+  },
+  "ansi-regex": {
+    "version": "6.6.0",
+    "license": "MIT"
+  },
+  "ansi-styles": {
+    "version": "6.2.3",
+    "license": "MIT"
+  },
+  "chromium-bidi": {
+    "version": "157.0.8090-0",
+    "license": "Apache-2.0"
+  },
+  "cliui": {
+    "version": "9.0.1",
+    "license": "ISC"
+  },
+  "devtools-protocol": {
+    "version": "0.0.1696802",
+    "license": "BSD-3-Clause"
+  },
+  "emoji-regex": {
+    "version": "10.6.0",
+    "license": "MIT"
+  },
+  "esbuild": {
+    "version": "0.27.7",
+    "license": "MIT"
+  },
+  "escalade": {
+    "version": "3.2.0",
+    "license": "MIT"
+  },
+  "get-caller-file": {
+    "version": "2.0.5",
+    "license": "ISC"
+  },
+  "get-east-asian-width": {
+    "version": "1.7.0",
+    "license": "MIT"
+  },
+  "mitt": {
+    "version": "3.0.1",
+    "license": "MIT"
+  },
+  "modern-tar": {
+    "version": "0.8.6",
+    "license": "MIT"
+  },
+  "puppeteer-core": {
+    "version": "25.14.0",
+    "license": "Apache-2.0"
+  },
+  "react": {
+    "version": "19.3.1",
+    "license": "MIT"
+  },
+  "react-dom": {
+    "version": "19.3.1",
+    "license": "MIT"
+  },
+  "scheduler": {
+    "version": "0.28.0",
+    "license": "MIT"
+  },
+  "string-width": {
+    "version": "8.3.0",
+    "license": "MIT"
+  },
+  "strip-ansi": {
+    "version": "7.2.0",
+    "license": "MIT"
+  },
+  "typed-query-selector": {
+    "version": "2.12.3",
+    "license": "MIT"
+  },
+  "webdriver-bidi-protocol": {
+    "version": "1.0.1",
+    "license": "Apache-2.0"
+  },
+  "wrap-ansi": {
+    "version": "9.0.2",
+    "license": "MIT"
+  },
+  "ws": {
+    "version": "8.23.0",
+    "license": "MIT"
+  },
+  "y18n": {
+    "version": "5.0.8",
+    "license": "ISC"
+  },
+  "yargs": {
+    "version": "18.2.0",
+    "license": "MIT"
+  },
+  "yargs-parser": {
+    "version": "22.0.0",
+    "license": "ISC"
+  },
+  "zod": {
+    "version": "4.6.7",
+    "license": "MIT"
+  }
+}
