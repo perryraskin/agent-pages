@@ -1,0 +1,2 @@
+import {Page, Section, Rows, Callout} from 'grok/canvas';
+export default function Decision(){return <Page title="Room to create." summary="Two spaces. One clear recommendation."><Callout tone="success" lead="Choose the studio">Daylight and a shared worktable make it the better fit for hands-on work.</Callout><Section heading="The shortlist"><Rows rows={[{title:'Garden studio',detail:'Bright · Materials included',status:{label:'Best fit',tone:'success'}},{title:'Meeting room',detail:'Quiet · Bring your own supplies'}]}/></Section></Page>}

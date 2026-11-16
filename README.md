@@ -2,11 +2,8 @@
 
 Interactive Pages authored by AI agents, viewed on the web, with an iMessage companion and a self-hosted library server. Start with the synthetic form below; its input and result run entirely in the browser.
 
-![Synthetic web form before submission](docs/images/form-input.png)
-*Actual web renderer, before submission.*
-
-![Synthetic web form greeting after submission](docs/images/form-result.png)
-*The same Page after entering “Demo” and submitting. These are web captures, not Messages screenshots.*
+![Three mobile web Pages: a workshop plan, a room decision, and an interactive project form](docs/images/showcase.png)
+*Real web renderer at iPhone dimensions; synthetic examples, not native Messages captures. [Reproduce the showcase](examples/showcase/README.md).*
 
 The web renderer and Python server work independently of an agent framework. Hermes has an extracted delivery adapter with mocked transport tests. The iOS host, Messages and Quick Look extensions have Simulator build support; native live delivery is unverified. OpenClaw is planned only.
 
